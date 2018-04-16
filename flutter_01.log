@@ -1,0 +1,73 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run
+
+## exception
+
+ArgumentError: Invalid argument(s): Cannot find executable for null.
+
+```
+#0      _getExecutable (package:process/src/interface/local_process_manager.dart:113)
+#1      LocalProcessManager.start (package:process/src/interface/local_process_manager.dart:41)
+#2      runCommand (package:flutter_tools/src/base/process.dart:115)
+#3      _IOSDevicePortForwarder.forward (package:flutter_tools/src/ios/devices.dart:490)
+<asynchronous suspension>
+#4      ProtocolDiscovery._forwardPort (package:flutter_tools/src/protocol_discovery.dart:93)
+<asynchronous suspension>
+#5      ProtocolDiscovery._handleLine (package:flutter_tools/src/protocol_discovery.dart:82)
+#6      _rootRunUnary (dart:async/zone.dart:1134)
+#7      _CustomZone.runUnary (dart:async/zone.dart:1031)
+#8      _CustomZone.runUnaryGuarded (dart:async/zone.dart:933)
+#9      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:330)
+#10     _DelayedData.perform (dart:async/stream_impl.dart:578)
+#11     _StreamImplEvents.handleNext (dart:async/stream_impl.dart:694)
+#12     _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:654)
+#13     _rootRun (dart:async/zone.dart:1126)
+#14     _CustomZone.run (dart:async/zone.dart:1023)
+#15     _CustomZone.bindCallback.<anonymous closure> (dart:async/zone.dart:949)
+#16     _microtaskLoop (dart:async/schedule_microtask.dart:41)
+#17     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50)
+#18     _runPendingImmediateCallback (dart:isolate-patch/dart:isolate/isolate_patch.dart:113)
+#19     _RawReceivePortImpl._handleMessage (dart:isolate-patch/dart:isolate/isolate_patch.dart:166)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel beta, v0.2.8, on Mac OS X 10.13.2 17C88, locale en-CL)
+    • Flutter version 0.2.8 at /Users/FcoPardo/Git/tools/flutter
+    • Framework revision b397406561 (12 days ago), 2018-04-02 13:53:20 -0700
+    • Engine revision c903c217a1
+    • Dart version 2.0.0-dev.43.0.flutter-52afcba357
+
+[!] Android toolchain - develop for Android devices (Android SDK 27.0.3)
+    • Android SDK at /Users/FcoPardo/android-sdk-macosx
+    • Android NDK at /Users/FcoPardo/android-sdk-macosx/ndk-bundle
+    • Platform android-27, build-tools 27.0.3
+    • ANDROID_HOME = /Users/FcoPardo/android-sdk-macosx
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-915-b08)
+    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
+
+[✓] iOS toolchain - develop for iOS devices (Xcode 9.3)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 9.3, Build version 9E145
+    • ios-deploy 1.9.2
+    • CocoaPods version 1.5.0
+
+[✓] Android Studio (version 3.0)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-915-b08)
+
+[!] VS Code (version 1.22.1)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Dart Code extension not installed; install from
+      https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code
+
+[✓] Connected devices (1 available)
+    • Francisco’s iPhone • d3d4ae567a8588b703f8662ffac49815976a1433 • ios • iOS 11.3
+
+! Doctor found issues in 2 categories.
+```
